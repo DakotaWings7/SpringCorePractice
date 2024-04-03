@@ -11,4 +11,9 @@
           class="ru.aliev.springcourse.ClassicalMusic">
     </bean>
 
+    <bean id="musicPlayer"
+          class="ru.aliev.springcourse.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
+
 </beans>
