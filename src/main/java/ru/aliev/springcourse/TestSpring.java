@@ -12,6 +12,8 @@ public class TestSpring {
 
         musicPlayer.play();
 
+        System.out.println(musicPlayer.getName() + " is playing on volume: " + musicPlayer.getVolume());
+
         context.close();
     }
 }
