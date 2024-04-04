@@ -9,10 +9,8 @@ public class TestSpring {
         );
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-
-        musicPlayer.play();
-
-        System.out.println(musicPlayer.getName() + " is playing on volume: " + musicPlayer.getVolume());
+        MusicPlayer musicPlayer1 = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer == musicPlayer1);
 
         context.close();
     }
