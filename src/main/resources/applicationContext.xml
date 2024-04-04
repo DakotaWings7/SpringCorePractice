@@ -10,31 +10,11 @@
 
     <context:property-placeholder location="musicPlayer.properties"/>
 
-    <bean id="rockMusic"
-          class="ru.aliev.springcourse.RockMusic">
-    </bean>
-
-    <bean id="classicalMusic"
-          class="ru.aliev.springcourse.ClassicalMusic">
-    </bean>
-
-    <bean id="rapMusic"
-          class="ru.aliev.springcourse.RapMusic">
-    </bean>
-
-    <bean id="musicPlayer"
-          class="ru.aliev.springcourse.MusicPlayer"
-          scope="prototype">
-        <property name="music">
-            <list>
-                <ref bean="rapMusic"/>
-                <ref bean="rockMusic"/>
-                <ref bean="classicalMusic"/>
-            </list>
-        </property>
-
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
+    <bean id="musicBean"
+          class="ru.aliev.springcourse.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getInstance">
     </bean>
 
 </beans>
